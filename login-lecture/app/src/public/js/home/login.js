@@ -9,7 +9,6 @@ const id = document.querySelector("#id"),
 
 loginBtn.addEventListener("click", login);
 
-
 // id에 들어가서 태그의 value에 접근
 
 function login() {
