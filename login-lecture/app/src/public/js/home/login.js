@@ -4,11 +4,13 @@
 // java에서 html 내용을 제어한다.
 
 
-const id = document.querySelector("#id"),
-    psword = document.querySelector("#psword"),
-    loginBtn = document.querySelector("button");
+const id = document.querySelector("#id")
+ const  psword = document.querySelector("#psword")
+  const loginBtn = document.querySelector("#button");
 
 loginBtn.addEventListener("click", login);
+
+console.log(psword)
 
 // id에 들어가서 태그의 value에 접근
 
