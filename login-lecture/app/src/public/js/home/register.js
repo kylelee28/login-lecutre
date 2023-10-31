@@ -13,17 +13,20 @@ const id = document.querySelector("#id"),
 
 registerBtn.addEventListener("click", register);
 
-
-
-// id에 들어가서 태그의 value에 접근
-
-function register() {
+function register () {
+    if (!id.value) return alert ("아이디를 입력해주십시오.")
+    if (psword !== confirmPsword) {
+        return alert("비밀번호가 일치하지 않습니다.");
+    }
+    
     const req = {
         id : id.value,
         name : name.value,
         psword : psword.value,
         confirmPsword : confirmPsword.value,
-    };
+        
+    }
+
 
 
 // 모든 각 언어마다 지원하고 있는 데이터 타입이 다르다.
@@ -31,13 +34,14 @@ function register() {
 // 문자열로 전송되기 때문에 데이터 크기 줄어들음.
 // 이해도 쉬움. 예전엔 XML이용.
 
-     fetch(".register", {
+     fetch("/register", {
          method : "POST",
          headers : {
              "Content-Type" : "application/json"
          },
          body : JSON.stringify(req),
      })
+
      .then((res) => res.json())
      .then((res) => {
          if(res.success) {
@@ -49,7 +53,9 @@ function register() {
      .catch((err) =>{
          console.error(new Error("회원가입 중 에러 발생"))
      })
-};
+
+    }
+
 
 
 
