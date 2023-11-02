@@ -19,10 +19,10 @@ const output = {
 }
 
 const process = {
-   login : (req, res) => {
+   login : async (req, res) => {
     const user = new User(req.body);
     console.log(user)
-    const response = user.login();
+    const response = await user.login();
     return res.json(response);
     },
 
