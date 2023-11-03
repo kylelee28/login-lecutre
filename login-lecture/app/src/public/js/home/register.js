@@ -24,7 +24,6 @@ function register () {
         name : name.value,
         psword : psword.value,
         confirmPsword : confirmPsword.value,
-        
     }
 
 
